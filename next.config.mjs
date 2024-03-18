@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  target: 'experimental-serverless-trace',
+  exportPathMap: function () {
+    return {
+      '/': { page: '/' },
+      '/about': { page: '/about' },
+      // Add more paths as needed
+    }
+  },
 };
 
 export default nextConfig;
